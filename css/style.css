@@ -70,6 +70,7 @@ body {
   .network-link {
     padding: 20px 10px;
     margin-right: 20px;
+    margin-bottom: 15px;
     font-size: 200%;
     font-weight: 100;
     cursor: pointer;
@@ -81,9 +82,43 @@ body {
   }
   .initial-link {
     margin: 0 auto;
-    padding: 0px;
+    padding: 5px 0px;
     width: 60%;
   }
+
+  .network-image {
+    position: absolute;
+    padding: 10px;
+    cursor: pointer;
+  }
+    .network-image img {
+      max-width: 300px;
+      max-height: 300px;
+    }
+  .kevin-image-1 {
+    padding: 10px;
+    display: none;
+    position: fixed;
+    z-index: 100000;
+    top: 100px;
+    left: 50px;
+  }
+    .kevin-image-1 img {
+      max-width: 300px;
+      max-height: 300px;
+    }
+  .kevin-image-2 {
+    padding: 10px;
+    display: none;
+    position: fixed;
+    z-index: 100000;
+    bottom: 100px;
+    right: 50px;
+  }
+    .kevin-image-2 img {
+      max-width: 300px;
+      max-height: 300px;
+    }
 
 .footer {
   width: 100%;
