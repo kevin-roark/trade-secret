@@ -31,6 +31,7 @@ $('.initial-link').mouseover(function() {
   self.removeClass('initial-link');
   linkMove(self);
   flashUnderline(self, 300);
+  self.unbind('mouseover');
 });
 
 $(document).on('mouseover', '.network-link', linkHovered);
