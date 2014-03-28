@@ -1,43 +1,9 @@
 
-var kutility = require('./lib/kutility'); /* you can remove this if you don't want it */
+var kutility = require('./lib/kutility');
+var content = require('./content');
 
-var phrases = [
-  "Click here to learn the trade secrets <i>THEY</i> aren't telling you.",
-  "Professional Networkers Hate Her! This Local Mom Came Up With Optimal Strategies for Connecting with the Skills YOU Need.",
-  "95% of Would-Be Networkers Make This Mistake. Click Here To Learn What Not To Do When Searching For Professional Connections For Your Start Up",
-  "Got A Concept And Need Coders? Click Here To Get In Contact With The Best of the Best",
-  "Be Great At What You Do! Get Access to the Resources You Need To Be The Professional You Know You Can Become",
-  "Overcome Your Shyness and Access The Skills Others Have to Offer with These Hot Tips",
-  "Sign Up For Daily Insights In Making Your Activities More Productive",
-  "Diversify Your Business Models And Access Untapped Revenue Streams",
-  "Enter The Chatroom to Exchange Skills and Contacts With Fellow Networkers",
-  "Addicted to Networking? Click Here To Get In Contact With Fellow Networking Addicts",
-  "Free Web Seminar On Making Connections And Envisioning Your Professional Networks",
-  "Click Here to Learn The Shocking Truth About LinkedIn Founder Reid Hoffman",
-  "Networking Online is the Key to Building the Professional Contacts You Need to Succeed—Download this Set of Buisness Oriented Emoticons To Get In With the E-Crowd",
-  "Are Your Professional Contacts Bots? Click Here to Get the Skinny On Predatory Networking Scams",
-  "Hungry For a Human Touch? Meet Lonely Professionals In Your Area",
-  "Learn The Five 'E's of Professional Networking",
-  "Want To Ingratiate Yourself With That Hip Man iN the Office Who Always Knows What's Up? Now You Can. Online. So You Don't Have To face Rejection Head ON",
-  "Need To Make Small Talk In a Business Setting? Learn The Tricks of the Trade for Seeming Like A Well-Rounded Person"
-];
-
-var images = [
-  'images/networking/1.jpg',
-  'images/networking/2.jpg',
-  'images/networking/3.jpg',
-  'images/networking/4.jpg',
-  'images/networking/5.jpg',
-  'images/networking/6.jpg',
-  'images/networking/7.png',
-  'images/networking/8.jpg',
-  'images/networking/9.jpg',
-  'images/networking/10.jpg',
-  'images/networking/11.jpg',
-  'images/networking/12.jpg',
-  'images/networking/13.jpg',
-  'images/networking/14.jpg'
-];
+var phrases = content.phrases;
+var images = content.images;
 
 var attemptedClicks = 0;
 var numLinks = 1;
@@ -163,7 +129,7 @@ function createImage() {
 function warpLater(el) {
   setTimeout(function() {
     kutility.warp(el);
-  }, 1000);
+  }, Math.floor(Math.random() * 10000) + 2000);
 }
 
 function getKevinsGoing() {
