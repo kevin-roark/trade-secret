@@ -492,7 +492,7 @@ function imageHovered() {
 
 function linkMove(el) {
   var left = Math.floor(Math.random() * $(window).width() * 0.6);
-  var top = Math.floor(Math.random() * ($(window).height() - 200)) + 200;
+  var top = Math.floor(Math.random() * ($(window).height() - 100));
   var content = kutility.choice(phrases);
   attemptedClicks++;
 
@@ -510,7 +510,7 @@ function linkMove(el) {
 
 function imageMove(img) {
   var left = Math.floor(Math.random() * $(window).width() * 0.8);
-  var top = Math.floor(Math.random() * ($(window).height() - 200)) + 200;
+  var top = Math.floor(Math.random() * ($(window).height() - 100));
   attemptedClicks++;
 
   img.css('left', left);
@@ -525,7 +525,7 @@ function imageMove(img) {
 function addSomething() {
   if (attemptedClicks % 10 == 0 && numLinks < 20) {
     var p = Math.random();
-    if (p < 0.69)
+    if (p < 0.8)
       createLink();
     else
       createImage();
@@ -586,9 +586,14 @@ function createImage() {
 }
 
 function warpLater(el) {
-  setTimeout(function() {
+  function warp() {
     kutility.warp(el);
-  }, Math.floor(Math.random() * 10000) + 2000);
+    setTimeout(warp, Math.floor(Math.random() * 20000) + 2000);
+  }
+
+  setTimeout(function() {
+    warp();
+  }, Math.floor(Math.random() * 20000) + 2000);
 }
 
 function getKevinsGoing() {
@@ -604,7 +609,7 @@ function getKevinsGoing() {
         clearInterval(satTimer);
         doHue();
       }
-    }, 60);
+    }, 160);
 
     function doHue() {
       var hue = 0;
@@ -624,7 +629,7 @@ function getKevinsGoing() {
       kutility.invert(k2, inv++);
       if (inv > 100)
         clearInterval(invTimer);
-    }, 150);
+    }, 250);
 
     setTimeout(function() {
       var b = 0;
@@ -635,7 +640,7 @@ function getKevinsGoing() {
       }, 35);
     }, 9000);
 
-  }, 25000);
+  }, 30000);
 }
 
 },{"./content":1,"./lib/kutility":2}]},{},[3])
